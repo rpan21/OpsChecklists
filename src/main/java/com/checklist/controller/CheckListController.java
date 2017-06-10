@@ -21,12 +21,14 @@ public class CheckListController {
     public String getHomePage() {
         String methodName="getHomePage";
         log.info("Login Page Url of Checklist is hit : " + className + ":" + methodName );
+		if(session.getAttribute("user").equals("admin"))
+		return hello.html;
        return "index";
     }
     
     
     @RequestMapping("/hello")
-    public ModelAndView getDetails(HttpServletRequest request) {
+    public ModelAndView getDetails(HttpServletRequest request, HttpSession session) {
         String methodName="getDetails";
         log.info("Home Page Url of Checklist is hit : " + className + ":" + methodName );
         CheckListService check= new CheckListService();
@@ -34,6 +36,7 @@ public class CheckListController {
         String username=request.getParameter("userName");
         String password=request.getParameter("userPassword");
         if(username.equals("admin")&& password.equals("admin")){
+			session.setAttribute("user","admin");
             return new ModelAndView("welcome", "message", message);
         }
        return new ModelAndView("index");
