@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-
+import javax.servlet.http.HttpSession;
 import com.checklist.services.CheckListService;
 
 
@@ -18,7 +18,7 @@ public class CheckListController {
     private final String className="CheckListController.class";
 
     @RequestMapping("/")
-    public String getHomePage() {
+    public String getHomePage(HttpSession session) {
         String methodName="getHomePage";
         log.info("Login Page Url of Checklist is hit : " + className + ":" + methodName );
 		if(session.getAttribute("user").equals("admin"))
