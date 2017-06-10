@@ -39,7 +39,7 @@ public String getdetails(){
     credentialsList.add(a);
     ServerAddress addr=new ServerAddress("ds163721.mlab.com",63721);
     MongoClient client = new MongoClient(addr, credentialsList);
-    MongoDatabase database = client.getDatabase("checklist");
+    MongoDatabase database = client.getDatabase("ops-checklist");
     MongoCollection<Document> collection = database.getCollection("detailList");
        
        
