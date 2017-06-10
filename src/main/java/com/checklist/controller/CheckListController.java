@@ -22,7 +22,7 @@ public class CheckListController {
         String methodName="getHomePage";
         log.info("Login Page Url of Checklist is hit : " + className + ":" + methodName );
 		if(session.getAttribute("user").equals("admin"))
-		return hello.html;
+		return "hello.html";
        return "index";
     }
     
