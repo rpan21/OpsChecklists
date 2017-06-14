@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
+
 import com.checklist.services.CheckListService;
 
 
@@ -17,12 +18,25 @@ public class CheckListController {
     private final String className="CheckListController.class";
 
     @RequestMapping("/")
-    public String getHomePage() {
+    public String getHomePage(HttpServletRequest request) {
         String methodName="getHomePage";
+        String username=(String) request.getSession().getAttribute("user");
+        if(null==username || username.isEmpty()){
         log.info("Login Page Url of Checklist is hit : " + className + ":" + methodName );
        return "index";
+        }
+        else{
+            return "redirect:/hello.html";
+        }
     }
     
+    @RequestMapping("/logout")
+    public String logout(HttpServletRequest request) {
+        String methodName="logout";
+        //String username=(String) request.getSession().getAttribute("user");
+        request.getSession().invalidate();
+        return "redirect:/";
+    }
     
     @RequestMapping("/hello")
     public ModelAndView getDetails(HttpServletRequest request) {
@@ -32,8 +46,15 @@ public class CheckListController {
         String message = check.getdetails();
         String username=request.getParameter("userName");
         String password=request.getParameter("userPassword");
-        if(username.equals("admin")&& password.equals("admin")){
+        String sessionvar=(String) request.getSession().getAttribute("user");
+        if(null!=username && null!=password){
+        if((username.equals("admin")&& password.equals("admin")) ){
+            request.getSession().setAttribute("user", username);
             return new ModelAndView("welcome", "message", message);
+        }
+        }
+        else if (null!=sessionvar) {
+            return new ModelAndView("welcome", "message", message); 
         }
        return new ModelAndView("index");
     }

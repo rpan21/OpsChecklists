@@ -28,9 +28,21 @@
   transition: .4s;
 }
 
+#appname{
+width: 300px;
+height: 30px;
+text-align: center;
+}
+
 body{
 
 background-color: "aqua";
+}
+
+#app{
+text-shadow:black;
+padding-left: 300px;
+
 }
 
 .slider:before {
@@ -83,13 +95,13 @@ var arr=${message};
     </div>
 
 <div class="ui segment">
-  <div class="ui button aligned center teal" id="create_pdf">Create PDF
-  </div>
-  <div class="ui divider">
-  </div>
+  
   <form class="ui form" id="formId">
+  <div id="app"><font size="5">Application Name</font> <input type="text" id="appname" border="12" ></div>
   </form>
-
+<div class="ui button aligned center teal" id="create_pdf">Create PDF
+  </div>
+<a href="logout.html"><div class="ui button aligned center teal" id="log_out">LOG OUT</div></a>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
     </script>
     <script type="text/javascript" src="//cdn.rawgit.com/MrRio/jsPDF/master/dist/jspdf.min.js">

@@ -17,8 +17,9 @@
 	 
 
 	 $('#create_pdf').on('click', function() {
-	  $('body').scrollTop(0);
-	  createPDF();
+		 alert($('#appname').val());
+		  $('body').scrollTop(0);
+		  createPDF();
 	 });
 	 //create pdf
 	 function createPDF() {
@@ -73,3 +74,4 @@ function appendCheckboxes () {
 }
 
 $(document).ready(appendCheckboxes);
+
