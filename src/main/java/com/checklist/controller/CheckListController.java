@@ -26,7 +26,7 @@ public class CheckListController {
        return "index";
         }
         else{
-            return "redirect:/hello.html";
+            return "redirect:/checklist.html";
         }
     }
     
@@ -38,7 +38,7 @@ public class CheckListController {
         return "redirect:/";
     }
     
-    @RequestMapping("/hello")
+    @RequestMapping("/checklist")
     public ModelAndView getDetails(HttpServletRequest request) {
         String methodName="getDetails";
         log.info("Home Page Url of Checklist is hit : " + className + ":" + methodName );
