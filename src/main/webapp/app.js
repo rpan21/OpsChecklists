@@ -14,6 +14,7 @@
 		   $('#app').hide();
 		   title= $('#appname').val();
 		   $('#title').text(title);
+		   $('#title').css("color", "red");
          });
 	 });
 	 
