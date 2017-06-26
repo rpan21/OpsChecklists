@@ -84,7 +84,13 @@ var arr=${message};
 </script>
 
 </head>
-<body>
+<SCRIPT type="text/javascript">
+	window.history.forward();
+	function noBack() { window.history.forward(); }
+</SCRIPT>
+</HEAD>
+<BODY onload="noBack();" 
+	onpageshow="if (event.persisted) noBack();" onunload="">
 <div class="ui page grid">
       <div class="wide column">
         <h1 class="ui header aligned center">OPS-Checklist

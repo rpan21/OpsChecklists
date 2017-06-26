@@ -17,7 +17,6 @@
 	 
 
 	 $('#create_pdf').on('click', function() {
-		 alert($('#appname').val());
 		  $('body').scrollTop(0);
 		  createPDF();
 	 });

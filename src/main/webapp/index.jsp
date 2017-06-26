@@ -4,7 +4,13 @@
 <meta charset="ISO-8859-1">
 <title>Login Page</title>
 </head>
-<body>
+<SCRIPT type="text/javascript">
+	window.history.forward();
+	function noBack() { window.history.forward(); }
+</SCRIPT>
+</HEAD>
+<BODY onload="noBack();" 
+	onpageshow="if (event.persisted) noBack();" onunload="">>
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <style>
 
