@@ -7,7 +7,6 @@
 		 $.each($("input[name='checkboxes']").not(':checked'), function(){ 
 			 
            var id=  $(this).val();
-           console.log(id);
            $("#"+id).hide();
            $(".hide").show();
            $('#create_pdf').hide();
