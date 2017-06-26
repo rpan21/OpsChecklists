@@ -52,10 +52,10 @@ public class CheckListController {
             request.getSession().setAttribute("user", username);
             return new ModelAndView("welcome", "message", message);
         }
-        }
-        else if (sessionvar.equals("admin")) {
+        else if (null!=sessionvar) {
             return new ModelAndView("welcome", "message", message); 
         }
+		}
        return new ModelAndView("index");
     }
 
