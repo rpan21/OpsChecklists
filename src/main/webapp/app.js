@@ -11,6 +11,7 @@
            $(".hide").show();
            $('#create_pdf').hide();
            $("input[name='checkboxes']").hide();
+		   $('#app').hide();
          });
 	 });
 	 
