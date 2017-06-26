@@ -104,7 +104,7 @@ var arr=${message};
   
   <form class="ui form" id="formId">
   <div id="app"><font size="5">Application Name</font> <input type="text" id="appname" border="12" ></div>
-  <h1 align="center" id="title"></h1>
+  <h1 color="Blue" align="center" id="title"></h1>
   </form>
 <div class="ui button aligned center teal" id="create_pdf">Create PDF
   </div>
