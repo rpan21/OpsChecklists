@@ -10,7 +10,7 @@
 </SCRIPT>
 </HEAD>
 <BODY onload="noBack();" 
-	onpageshow="if (event.persisted) noBack();" onunload="">>
+	onpageshow="if (event.persisted) noBack();" onunload="">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <style>
 
