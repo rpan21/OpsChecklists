@@ -103,7 +103,8 @@ var arr=${message};
 <div class="ui segment">
   
   <form class="ui form" id="formId">
-  <div id="app"><font size="5">Application Name</font></div> <input type="text" id="appname" border="12" >
+  <div id="app"><font size="5">Application Name</font> <input type="text" id="appname" border="12" ></div>
+  <h3 align="center" id="title"></h3>
   </form>
 <div class="ui button aligned center teal" id="create_pdf">Create PDF
   </div>

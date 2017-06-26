@@ -12,6 +12,8 @@
            $('#create_pdf').hide();
            $("input[name='checkboxes']").hide();
 		   $('#app').hide();
+		   title= $('#appname').val();
+		   $('#title').text(title);
          });
 	 });
 	 
