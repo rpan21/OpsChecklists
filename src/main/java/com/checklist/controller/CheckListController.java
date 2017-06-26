@@ -53,7 +53,7 @@ public class CheckListController {
             return new ModelAndView("welcome", "message", message);
         }
         }
-        else if (null!=sessionvar) {
+        else if (sessionvar.equals("admin")) {
             return new ModelAndView("welcome", "message", message); 
         }
        return new ModelAndView("index");
