@@ -47,13 +47,13 @@ public class CheckListController {
         String username=request.getParameter("userName");
         String password=request.getParameter("userPassword");
         String sessionvar=(String) request.getSession().getAttribute("user");
+		if (null!=sessionvar) {
+            return new ModelAndView("welcome", "message", message); 
+        }
         if(null!=username && null!=password){
         if((username.equals("admin")&& password.equals("admin")) ){
             request.getSession().setAttribute("user", username);
             return new ModelAndView("welcome", "message", message);
-        }
-        else if (null!=sessionvar) {
-            return new ModelAndView("welcome", "message", message); 
         }
 		}
        return new ModelAndView("index");
