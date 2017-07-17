@@ -40,9 +40,9 @@ public String getdetails(){
 
 @SuppressWarnings("resource")
 private MongoDatabase getMongoConnection() {
-    MongoClient client = new MongoClient("localhost",27017);
+    /*MongoClient client = new MongoClient("localhost",27017);
     //MongoClient client = new MongoClient(addr, credentialsList);
-    MongoDatabase database = client.getDatabase("checklist");
+    MongoDatabase database = client.getDatabase("checklist");*/
     //Mongo mongo = new Mongo("ds163721.mlab.com",63721);
     //DB db = mongo.getDB("ops-checklist");
 
@@ -57,14 +57,14 @@ private MongoDatabase getMongoConnection() {
     
     
     
-   /* List<MongoCredential> credentialsList = new ArrayList<MongoCredential>();
+   List<MongoCredential> credentialsList = new ArrayList<MongoCredential>();
     char[] password = new char[] {'m', 'l', 'a', 'b', '@', '6', '4', '1', '9'};
     MongoCredential a=MongoCredential.createCredential("rpandey21", "ops-checklist", password);
     //MongoCredential a=MongoCredential.createCredential("abc", "checklist", password);
     credentialsList.add(a);
     ServerAddress addr=new ServerAddress("ds163721.mlab.com",63721);
     MongoClient client = new MongoClient(addr, credentialsList);
-    MongoDatabase database = client.getDatabase("ops-checklist");*/
+    MongoDatabase database = client.getDatabase("ops-checklist");
     return database;
 }
 
