@@ -1,7 +1,7 @@
 (function() {
 	 var form = $('.form'),
 	  cache_width = form.width(),
-	  a4 = [595.28, 841.89]; // for a4 size paper width and height
+	  a4 = [595.28, 11841.89]; // for a4 size paper width and height
 	 
 	 $('#create_pdf').on('click', function() {
 		 $.each($("input[name='checkboxes']").not(':checked'), function(){ 
@@ -12,6 +12,7 @@
            $('#create_pdf').hide();
            $("input[name='checkboxes']").hide();
 		   $('#app').hide();
+		   $('#team').hide();
 		   title= $('#appname').val();
 		   $('#title').text(title);
 		   $('#title').css("color", "red");
@@ -34,26 +35,28 @@
          $('#team').hide();
         // window.open(id+".pdf");
        });
+	
 });
 	 
 	 $('#create_pdf').on('click', function() {
 		  $('body').scrollTop(0);
 		  createPDF();
 	 });
+	 
 	 //create pdf
 	 function createPDF() {
-	  getCanvas().then(function(canvas) {
-	   var
-	    img = canvas.toDataURL("image/png"),
-	    doc = new jsPDF({
-	     unit: 'px',
-	     format: 'a4'
-	    });
-	   doc.addImage(img, 'JPEG', 20, 20);
-	   doc.save('ops-checklist.pdf');
-	   form.width(cache_width);
-	  });
-	 }
+		 var pdf = new jsPDF('p', 'pt', 'a3');
+		 var options = {
+		          pagesplit: false
+		     };
+
+		 pdf.addHTML($('body'), options, function()
+		 {
+		     pdf.save("ops-checklist.pdf");
+		     
+		 });
+	   
+	  }
 
 	 // create canvas object
 	 function getCanvas() {

@@ -6,6 +6,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.12.0/semantic.min.css" />
+<script type="text/javascript" src="jquery/jquery-1.7.1.min.js"></script> </span></em>
+<em><span style="font-size: small;"><script type="text/javascript" src="jspdf.js"></script> </span></em>
+
+<em><span style="font-size: small;"><script type="text/javascript" src="jspdf.plugin.standard_fonts_metrics.js"></script> </span></em>
+
+<em><span style="font-size: small;"><script type="text/javascript" src="jspdf.plugin.split_text_to_size.js"></script> </span></em>
+
+<em><span style="font-size: small;"><script type="text/javascript" src="jspdf.plugin.from_html.js"></script>
 <style>
 .switch {
   position: relative;
@@ -37,10 +45,13 @@ height: 30px;
 text-align: center;
 }
 
-body{
-
-background-color: "aqua";
-}
+html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+                background-color: aqua;
+            }
 
 #app{
 text-shadow:black;
